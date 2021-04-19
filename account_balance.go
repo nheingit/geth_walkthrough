@@ -8,7 +8,7 @@ import (
 	"math/big"
 
 	"github.com/ethereum/go-ethereum/common"
-  "github.com/ethereum/go-ethereum/ethclient"
+	"github.com/ethereum/go-ethereum/ethclient"
 )
 
 func main() {
@@ -23,8 +23,8 @@ func main() {
 		log.Fatal(err)
 	}
 	fmt.Println(balance)
-  // this will give you the balance at the time of blockNumber
-	blockNumber:= big.NewInt(5532993)
+	// this will give you the balance at the time of blockNumber
+	blockNumber := big.NewInt(5532993)
 	balanceAt, err := client.BalanceAt(context.Background(), account, blockNumber)
 	if err != nil {
 		log.Fatal(err)
@@ -44,12 +44,9 @@ func main() {
 	// instead of using the BalanceAt() function, we can use PendingBalanceAt()
 
 	pendingBalance, err := client.PendingBalanceAt(context.Background(), account)
-	if err != nil{
+	if err != nil {
 		log.Fatal(err)
 	}
 	fmt.Println(pendingBalance)
-
-
-
 
 }
